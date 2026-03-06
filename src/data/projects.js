@@ -9,7 +9,7 @@ export const projects = [
     description: 'Building an ML system for the Hong Kong Government.',
     featured: true,
     flagship: true,
-    image: `/hkstp.jpg`,
+    image: `/HKSTP.jpg`,
     link: 'https://github.com/edwardzhang2/Vessel',
     context: 'Summer 2025 · Hong Kong Science & Technology Parks',
     category: 'flagship'
