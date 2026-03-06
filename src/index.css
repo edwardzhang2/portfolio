@@ -1,5 +1,5 @@
-/* Font pairing (serious + human) */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap');
+/* Clean, modern font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,17 +16,16 @@ html {
 }
 
 :root {
-  /* Overwritten at runtime from `src/data/theme.js` */
-  --color-accent: #5B5FC7;
-  --color-accent-soft: rgba(91, 95, 199, 0.10);
-  --color-text: #1A1D29;
-  --color-text-muted: #54577A;
-  --color-bg: #FAFAFA;
-  --color-card: #FFFFFF;
-  --color-border: rgba(26, 29, 41, 0.10);
+  --color-accent: #6366F1;
+  --color-accent-soft: rgba(99, 102, 241, 0.12);
+  --color-text: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-bg: #0a0a0a;
+  --color-card: #111111;
+  --color-border: rgba(255, 255, 255, 0.08);
 
-  --font-heading: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-body: "Source Serif 4", ui-serif, Georgia, "Times New Roman", serif;
+  --font-heading: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 body {
@@ -38,23 +37,44 @@ body {
   color: var(--color-text);
 }
 
-/* Headings - confident but not loud */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   line-height: 1.2;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* Minimal animations - only when earned */
-@keyframes fade-in {
+/* Gradient blob animation */
+@keyframes blob-drift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -30px) scale(1.08);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+.animate-blob {
+  animation: blob-drift 12s ease-in-out infinite;
+}
+
+.animate-blob-delay {
+  animation: blob-drift 15s ease-in-out infinite reverse;
+  animation-delay: -4s;
+}
+
+/* Fade in up animation */
+@keyframes fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -62,29 +82,49 @@ code {
   }
 }
 
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .animate-fade-in {
   animation: fade-in 0.4s ease-out;
 }
 
-/* Restrained transitions */
+/* Card hover glow */
+.card-hover-glow {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card-hover-glow:hover {
+  border-color: rgba(99, 102, 241, 0.3) !important;
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.15), 0 8px 32px rgba(99, 102, 241, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Smooth transitions */
 .transition-smooth {
   transition: all 0.2s ease;
 }
 
-/* Minimal scrollbar styling */
+/* Scrollbar styling */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg);
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-accent);
-  border-radius: 4px;
+  background: rgba(99, 102, 241, 0.4);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: color-mix(in srgb, var(--color-accent) 88%, black);
+  background: rgba(99, 102, 241, 0.7);
 }

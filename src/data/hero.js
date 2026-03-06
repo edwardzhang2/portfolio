@@ -1,12 +1,12 @@
-// Hero section content - Authoritative, confident, restrained
+// Hero section content - Friendly, approachable, personal
 export const hero = {
   // ContainerScroll content - used once, in hero only
-  mainTitle: "I build systems that scale from prototype to production.",
+  mainTitle: "Hi, I'm Edward - CS student at Penn",
   
-  subtitle: "From OCR pipelines processing 10,000+ handwritten forms on GPU infrastructure, to full-stack platforms serving real nonprofits—I focus on ownership, technical depth, and making things work under real constraints.",
+  subtitle: "Computer Science student at Penn originally from Hong Kong, exploring full-stack development, ML, and the intersection of technology and business.",
   
-  // Image for scroll animation - infrastructure/systems feel
-  heroImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80",
+  // Image for scroll animation - more approachable feel
+  heroImage: "/profile.jpg",
   
   // Fallback for non-scroll sections
   name: "Edward Zhang",

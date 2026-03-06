@@ -6,7 +6,7 @@ import { cn } from "../../lib/utils";
 export const GlowingEffect = ({
   children,
   className,
-  glowColor = "rgba(91, 95, 199, 0.22)",
+  glowColor = "rgba(107, 127, 255, 0.25)",
   borderRadius = "24px",
 }: {
   children: React.ReactNode;

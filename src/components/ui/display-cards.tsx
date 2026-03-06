@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { cn } from "../../lib/utils";
+import { theme } from "../../data/theme";
 
 interface DisplayCardProps {
   title: string;
@@ -9,7 +10,7 @@ interface DisplayCardProps {
   icon?: React.ReactNode;
   className?: string;
   tags?: string[];
-  href?: string;
+  link?: string;
   meta?: string;
 }
 
@@ -20,40 +21,29 @@ export const DisplayCard = ({
   icon,
   className,
   tags,
-  href,
+  link,
   meta,
 }: DisplayCardProps) => {
-  const CardWrapper = href ? "a" : "div";
-  const cardProps = href
-    ? { href, target: "_blank", rel: "noopener noreferrer" }
-    : {};
-
   return (
-    <CardWrapper
-      {...cardProps}
+    <div
       className={cn(
         "group relative overflow-hidden rounded-2xl",
         "bg-[var(--color-card)] border border-[var(--color-border)]",
-        "transition-colors duration-200 hover:border-[rgba(91,95,199,0.35)]",
+        "transition-all duration-200 hover:border-[rgba(107,127,255,0.45)] hover:transform hover:scale-[1.02]",
         "hover:shadow-[0_10px_28px_rgba(0,0,0,0.28)]",
         className
       )}
     >
-      {/* Background Image Layer */}
+      {/* Image on top - no gradient */}
       {image && (
-        <div className="relative h-40 overflow-hidden">
+        <div
+          className="relative overflow-hidden bg-gray-50"
+          style={{ aspectRatio: "16/9" }}
+        >
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-cover"
-            style={{ filter: "saturate(0.95) contrast(1.02)" }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to top, rgba(21,28,37,1), rgba(21,28,37,0.4) 60%, rgba(0,0,0,0.15))",
-            }}
+            className="w-full h-full object-contain p-3"
           />
         </div>
       )}
@@ -67,15 +57,45 @@ export const DisplayCard = ({
           </div>
         )}
 
-        {/* Meta */}
-        {meta && (
-          <div
-            className="text-[11px] font-semibold uppercase tracking-wider mb-3"
-            style={{ color: "var(--color-text-muted)" }}
-          >
-            {meta}
+        {/* Meta and Link */}
+        <div className="flex items-start justify-between gap-4 mb-3">
+          <div className="flex-1">
+            {meta && (
+              <div
+                className="text-[11px] font-semibold uppercase tracking-wider"
+                style={{ color: "var(--color-text-muted)" }}
+              >
+                {meta}
+              </div>
+            )}
           </div>
-        )}
+          {link && (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 p-1.5 rounded-lg hover:bg-gray-100 transition-all hover:scale-110 duration-200"
+              style={{ color: theme.accentColor }}
+              title="View project"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          )}
+        </div>
 
         {/* Title */}
         <h3
@@ -102,7 +122,7 @@ export const DisplayCard = ({
                 className="px-3 py-1 text-xs rounded-full border"
                 style={{
                   backgroundColor: "var(--color-accent-soft)",
-                  borderColor: "rgba(91,95,199,0.18)",
+                  borderColor: "rgba(107,127,255,0.22)",
                   color: "var(--color-text)",
                 }}
               >
@@ -112,7 +132,7 @@ export const DisplayCard = ({
           </div>
         )}
       </div>
-    </CardWrapper>
+    </div>
   );
 };
 

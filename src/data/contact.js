@@ -1,30 +1,28 @@
-// Contact information - Update with your actual details
+// Contact information
 export const contact = {
-  email: 'edward.zhang@example.com',
-  github: 'https://github.com/edwardzhang',
-  linkedin: 'https://linkedin.com/in/edwardzhang',
-  twitter: '', // Optional - add if you have Twitter
-  resume: '/resume.pdf', // Place your resume in the public folder
-  
-  // Social links array for easy mapping
+  email: 'zhange2@sas.upenn.edu',
+  github: 'https://github.com/edwardzhang2',
+  linkedin: 'https://linkedin.com/in/edwardzhang2',
+  instagram: 'https://instagram.com/edwardzhangg',
+  twitter: '',
+  resume: `/resume.pdf`,
+
   socialLinks: [
     {
       name: 'GitHub',
-      url: 'https://github.com/edwardzhang',
+      url: 'https://github.com/edwardzhang2',
       icon: 'github',
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/edwardzhang',
+      url: 'https://linkedin.com/in/edwardzhang2',
       icon: 'linkedin',
     }
   ],
-  
-  // Contact page content
-  heading: 'Get In Touch',
-  subheading: "I'm always open to discussing new projects, creative ideas, or opportunities—especially in health tech, education, and public infrastructure.",
-  
-  // Alternative contact methods (optional)
-  phone: '', // Add if you want to display phone number
-  location: '', // Add if you want to display location (e.g., "Philadelphia, PA")
+
+  heading: "Let's Connect!",
+  subheading: "I'm always excited to connect with new people! Whether you want to chat about projects, internships, or just grab coffee in Philly - feel free to reach out.",
+
+  phone: '',
+  location: 'Philadelphia, PA',
 };

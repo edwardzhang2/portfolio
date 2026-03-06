@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ backgroundColor: 'var(--color-bg)' }}>
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#0a0a0a' }}>
       <Navbar />
       <main className="flex-grow">
         {children}
@@ -20,4 +20,3 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
-

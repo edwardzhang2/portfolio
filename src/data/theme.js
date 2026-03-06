@@ -1,59 +1,57 @@
-// Theme configuration - Human-designed, opinionated, restrained
+// Theme configuration - Dark, sleek, linear.app/Vercel style
 export const theme = {
-  // Colors - Desaturated, serious, professional
-  accentColor: '#5B5FC7', // Muted indigo - restrained accent
-  accentColorLight: '#7377CF', // Subtle hover variant
-  textColor: '#E9ECF2', // High-contrast on dark
-  textColorLight: '#A7AFC0', // Muted secondary text on dark
-  backgroundColor: '#0F1419', // Global default (same dark as Home)
-  backgroundDark: '#0F1419', // Alias (kept for compatibility)
-  cardBackground: '#151C25', // Slightly lifted surface
-  surfaceRaised: '#1A2330', // Optional second elevation
-  borderColor: 'rgba(255,255,255,0.10)',
-  
-  // Typography - Restrained, serious, human
-  // Swap these in one place (these also drive global CSS variables)
-  fontFamily: '"IBM Plex Sans"', // Headings / UI
-  bodyFontFamily: '"Source Serif 4"', // Body copy (human warmth, still professional)
-  
-  // Font sizes - Intentional hierarchy
+  // Colors - Dark theme
+  accentColor: '#6366F1',
+  accentColorLight: '#818CF8',
+  textColor: '#f1f5f9',
+  textColorLight: '#94a3b8',
+  backgroundColor: '#0a0a0a',
+  backgroundDark: '#050505',
+  cardBackground: '#111111',
+  cardBackgroundAlt: '#161616',
+  surfaceRaised: '#1a1a1a',
+  borderColor: 'rgba(255,255,255,0.08)',
+
+  // Typography
+  fontFamily: '"Inter"',
+  bodyFontFamily: '"Inter"',
+
+  // Font sizes
   fontSize: {
-    hero: '3.75rem',      // 60px - restrained, not gigantic
-    h1: '2.5rem',         // 40px
-    h2: '1.875rem',       // 30px
-    h3: '1.5rem',         // 24px
-    body: '1.0625rem',    // 17px - slightly larger than default
-    small: '0.9375rem',   // 15px
+    hero: '3.75rem',
+    h1: '2.5rem',
+    h2: '1.875rem',
+    h3: '1.5rem',
+    body: '1.0625rem',
+    small: '0.9375rem',
   },
-  
-  // Spacing & Layout - Asymmetric, intentional
-  maxWidth: '1140px',        // Narrower constraint
+
+  // Spacing & Layout
+  maxWidth: '1140px',
   sectionSpacing: {
-    tight: '4rem',           // 64px
-    normal: '6rem',          // 96px
-    loose: '8rem',           // 128px
+    tight: '4rem',
+    normal: '6rem',
+    loose: '8rem',
   },
   borderRadius: '12px',
   cardBorderRadius: '16px',
-  
-  // Shadows - Minimal, earned (dark-mode tuned)
-  shadowSm: '0 1px 2px rgba(0, 0, 0, 0.30)',
-  shadowMd: '0 10px 28px rgba(0, 0, 0, 0.28)',
-  shadowLg: '0 18px 52px rgba(0, 0, 0, 0.35)',
-  
+
+  // Shadows - dark-tuned
+  shadowSm: '0 1px 2px rgba(0, 0, 0, 0.4)',
+  shadowMd: '0 4px 12px rgba(0, 0, 0, 0.6)',
+  shadowLg: '0 12px 32px rgba(0, 0, 0, 0.8)',
+
   // Tag styling
-  tagBackground: 'rgba(91, 95, 199, 0.16)',
-  tagColor: '#E9ECF2',
-  
-  // Animations - Restrained
+  tagBackground: 'rgba(99,102,241,0.12)',
+  tagColor: '#a5b4fc',
+
+  // Animations
   transitionSpeed: '0.2s',
-  hoverScale: '1.0', // No scale on hover - too decorative
+  hoverScale: '1.02',
 };
 
-// Helper function to get theme values
 export const getThemeValue = (key) => theme[key];
 
-// Apply theme to global CSS variables (keeps customization centralized)
 export const applyThemeToDocument = (t = theme) => {
   if (typeof document === 'undefined') return;
   const root = document.documentElement;
@@ -62,10 +60,7 @@ export const applyThemeToDocument = (t = theme) => {
     const normalized = hex.replace('#', '').trim();
     const full =
       normalized.length === 3
-        ? normalized
-            .split('')
-            .map((c) => c + c)
-            .join('')
+        ? normalized.split('').map((c) => c + c).join('')
         : normalized;
     const int = Number.parseInt(full, 16);
     if (Number.isNaN(int) || full.length !== 6) return null;
@@ -74,8 +69,8 @@ export const applyThemeToDocument = (t = theme) => {
 
   const accentRgb = hexToRgb(t.accentColor);
   const accentSoft = accentRgb
-    ? `rgba(${accentRgb.r}, ${accentRgb.g}, ${accentRgb.b}, 0.10)`
-    : 'rgba(91, 95, 199, 0.10)';
+    ? `rgba(${accentRgb.r}, ${accentRgb.g}, ${accentRgb.b}, 0.12)`
+    : 'rgba(99, 102, 241, 0.12)';
 
   root.style.setProperty('--color-accent', t.accentColor);
   root.style.setProperty('--color-accent-soft', accentSoft);
@@ -83,7 +78,7 @@ export const applyThemeToDocument = (t = theme) => {
   root.style.setProperty('--color-text-muted', t.textColorLight);
   root.style.setProperty('--color-bg', t.backgroundColor);
   root.style.setProperty('--color-card', t.cardBackground);
-  root.style.setProperty('--color-border', t.borderColor || 'rgba(255,255,255,0.10)');
+  root.style.setProperty('--color-border', t.borderColor);
 
   root.style.setProperty(
     '--font-heading',
@@ -91,6 +86,6 @@ export const applyThemeToDocument = (t = theme) => {
   );
   root.style.setProperty(
     '--font-body',
-    `${t.bodyFontFamily}, ui-serif, Georgia, "Times New Roman", serif`
+    `${t.bodyFontFamily}, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`
   );
 };
