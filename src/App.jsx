@@ -15,8 +15,7 @@ const Nav = () => (
 
 const Hero = () => (
   <header className="hero" id="top">
-    <p className="hero-kicker">{site.title}</p>
-    <h1 className="hero-statement">{site.statement}</h1>
+    <h1 className="hero-name">{site.name}</h1>
     <p className="hero-now">{site.now}</p>
     <ul className="hero-links">
       {site.links.map((l) => (

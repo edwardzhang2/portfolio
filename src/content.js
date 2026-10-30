@@ -3,11 +3,7 @@ const base = import.meta.env.BASE_URL;
 
 export const site = {
   name: 'Edward Zhang',
-  title: 'Backend & distributed systems',
-  // The one thing a reader should take away.
-  statement:
-    'I build the backend that makes a product dependable: ingestion pipelines, job queues, and schemas that still hold up when the data is messy and the requirements change.',
-  now: 'Studying Computer Science and Mathematics at the University of Pennsylvania, class of 2028. Most recently a software engineering intern at Carrier.',
+  now: 'Computer Science and Mathematics at the University of Pennsylvania, class of 2028. Backend and distributed systems. Most recently a software engineering intern at Carrier.',
   email: 'zhange2@sas.upenn.edu',
   links: [
     { label: 'Resume', href: `${base}resume.pdf`, primary: true },
