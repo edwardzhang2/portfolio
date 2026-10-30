@@ -4,7 +4,7 @@ const base = import.meta.env.BASE_URL;
 export const site = {
   name: 'Edward Zhang',
   photo: `${base}profile.jpg`,
-  now: 'Computer Science and Mathematics at the University of Pennsylvania, class of 2028. Backend and distributed systems. Most recently a software engineering intern at Carrier.',
+  now: 'Computer Science and Maths at the University of Pennsylvania, Class of 2028.',
   email: 'zhange2@sas.upenn.edu',
   links: [
     { label: 'Resume', href: `${base}resume.pdf`, primary: true },
@@ -166,17 +166,18 @@ export const projects = [
 
 export const about = {
   education:
-    'University of Pennsylvania, B.S.E. in Computer Science and Mathematics, GPA 3.93, expected May 2028. Coursework includes advanced algorithms, computer systems, operating systems, databases, big data analytics, and theory of computation.',
+    'University of Pennsylvania, B.S.E. in Computer Science and Mathematics, GPA 3.93, expected May 2028. Coursework includes Advanced Algorithms, Computer Systems, Operating Systems, Databases, Big Data Analytics, and Theory of Computation.',
   awards: [
     'USACO Gold Division (top 1,000 competitors globally)',
     'PennApps XXIV, Best Community Impact Hack',
     'CalHacks 12.0, Snap Spectacles track, 2nd place',
     'PwC Engineer Your Career Program',
+    'SIG Discovery Day',
     'Hong Kong Olympiad in Informatics, bronze medallist and training team (top 20 in Hong Kong)',
     'UK Mathematics Challenge, gold award, five times',
   ],
   tools:
-    'Python, Go, C and C++, Java, TypeScript, OCaml. FastAPI, PostgreSQL, Redis, Celery, Kafka, Docker, Kubernetes, AWS and Azure.',
+    'Python, C and C++, Java, TypeScript, OCaml. FastAPI, PostgreSQL, Redis, Celery, Kafka, Docker, Kubernetes, AWS and Azure.',
   personal:
-    'I grew up in Hong Kong. Off the keyboard I follow Formula 1, the NFL, and the Premier League, play soccer and piano, and work through Philadelphia’s restaurants one neighbourhood at a time.',
+    'I grew up in Hong Kong and moved to Philadelphia for Penn. Outside of work I’m a huge soccer fan, and I follow Formula 1 and the NFL just as closely. I also play piano, travel whenever I can, and am always up for trying a new restaurant.',
 };

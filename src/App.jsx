@@ -70,9 +70,6 @@ const Experience = () => (
 const Projects = () => (
   <section id="projects" className="section">
     <h2>Projects</h2>
-    <p className="section-intro">
-      Side projects, mostly backend. The ones without a link are private or still in progress; ask and I will walk you through the code.
-    </p>
     <ul className="projects">
       {projects.map((p) => (
         <li key={p.name} className="project">
@@ -102,7 +99,7 @@ const About = () => (
       <dd>
         <ul>{about.awards.map((a) => <li key={a}>{a}</li>)}</ul>
       </dd>
-      <dt>Tools I reach for</dt>
+      <dt>Technologies</dt>
       <dd>{about.tools}</dd>
       <dt>Elsewhere</dt>
       <dd>{about.personal}</dd>
