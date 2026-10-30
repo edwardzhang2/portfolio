@@ -66,7 +66,8 @@ main, .nav, .footer {
 .nav-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
 
 /* Hero */
-.hero { padding: 6rem 0 5rem; max-width: 50rem; }
+.hero { padding: 5rem 0 5rem; max-width: 50rem; }
+.hero-photo { width: 7.5rem; height: 7.5rem; border-radius: 50%; object-fit: cover; object-position: top; display: block; margin-bottom: 1.5rem; }
 .hero-name { font-size: clamp(2rem, 1.25rem + 2.5vw, 3rem); font-weight: 600; letter-spacing: -0.02em; }
 .hero-now { margin-top: 1rem; color: var(--ink-2); max-width: var(--measure); }
 .hero-links { list-style: none; padding: 0; margin-top: 2rem; display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
@@ -99,7 +100,8 @@ main, .nav, .footer {
 .role-when { color: var(--ink-2); font-size: 1rem; line-height: 1.5; display: flex; flex-direction: column; }
 .role-place { color: var(--ink-3); }
 .role-body { max-width: 44rem; }
-.role-org { font-size: 1.25rem; }
+.role-org { font-size: 1.25rem; display: flex; align-items: center; flex-wrap: wrap; gap: 0 0.4rem; }
+.role-logo { height: 1.4rem; width: auto; max-width: 5rem; object-fit: contain; margin-right: 0.35rem; border-radius: 3px; }
 .role-title { font-weight: 400; color: var(--ink-2); }
 .role-title::before { content: ' \2014  '; color: var(--ink-3); }
 .role-summary { margin-top: 0.5rem; color: var(--ink-2); }
@@ -115,6 +117,7 @@ main, .nav, .footer {
   grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
   gap: 2.25rem 3rem;
 }
+.project-image { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 6px; margin-bottom: 0.9rem; background: var(--rule); }
 .project h3 { font-size: 1.125rem; }
 .project h3 a { color: var(--ink); }
 .project-blurb { margin-top: 0.4rem; color: var(--ink-2); font-size: 1.0625rem; }

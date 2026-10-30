@@ -3,6 +3,7 @@ const base = import.meta.env.BASE_URL;
 
 export const site = {
   name: 'Edward Zhang',
+  photo: `${base}profile.jpg`,
   now: 'Computer Science and Mathematics at the University of Pennsylvania, class of 2028. Backend and distributed systems. Most recently a software engineering intern at Carrier.',
   email: 'zhange2@sas.upenn.edu',
   links: [
@@ -16,6 +17,7 @@ export const site = {
 export const experience = [
   {
     org: 'Carrier (Sensitech)',
+    logo: '',
     role: 'Software Engineer Intern',
     place: 'Beverly, MA',
     when: 'Summer 2026',
@@ -31,6 +33,7 @@ export const experience = [
   },
   {
     org: 'Hong Kong Science & Technology Parks',
+    logo: `${base}hkstp.jpg`,
     role: 'Software Engineer Intern',
     place: 'Hong Kong',
     when: 'Summer 2025',
@@ -46,6 +49,7 @@ export const experience = [
   },
   {
     org: 'Hack4Impact',
+    logo: `${base}celf.jpg`,
     role: 'Project Manager and Technical Lead',
     place: 'Philadelphia, PA',
     when: 'Sep 2024 to present',
@@ -71,6 +75,7 @@ export const experience = [
   },
   {
     org: 'Wharton Analytics Fellows',
+    logo: `${base}pennvet.jpg`,
     role: 'Senior Data Analyst',
     place: 'Philadelphia, PA',
     when: 'Aug 2025 to present',
@@ -130,12 +135,14 @@ export const projects = [
   },
   {
     name: 'Bone health from CT',
+    image: `${base}bonehealth.jpg`,
     stack: 'Python, DICOM, PyTorch',
     blurb: 'DICOM viewer and feature pipeline from the Rajapakse Lab work.',
     href: 'https://github.com/edwardzhang2/Bone-Health',
   },
   {
     name: 'Fantasy Premier League engine',
+    image: `${base}fpl.jpg`,
     stack: 'Python, scikit-learn',
     blurb:
       'Weekly transfer recommendations from form, fixture difficulty, and ownership trends. Built to stop losing to friends; has won two dinners.',
@@ -143,17 +150,28 @@ export const projects = [
   },
   {
     name: 'AR eating-behaviour companion',
+    image: `${base}snapcv.jpg`,
     stack: 'Snap Spectacles, Gemini API, Flask, Supabase',
-    blurb: 'CalHacks 12.0, 36 hours: real-time behaviour recognition from the live camera feed with animated AR encouragement.',
+    blurb: 'CalHacks 12.0, second place in the Snap Spectacles track. Real-time behaviour recognition from the live camera feed with animated AR encouragement.',
     href: 'https://github.com/irenkani/calhacks12.0',
+  },
+  {
+    name: 'Celestial object classification',
+    image: `${base}astronomy.jpg`,
+    stack: 'TensorFlow, Keras, scikit-learn',
+    blurb: 'CNNs against classical baselines for separating stars, galaxies, and quasars in telescope survey data. CIS 5450 final project.',
+    href: 'https://colab.research.google.com/drive/1A81VRvDn4NE9VW2dW7a6dWxNcjuWW3_T?usp=sharing',
   },
 ];
 
 export const about = {
   education:
-    'University of Pennsylvania, B.S.E. in Computer Science and Mathematics, GPA 3.93, expected May 2028. Coursework includes operating systems, databases, artificial intelligence, big data analytics, and theory of computation.',
+    'University of Pennsylvania, B.S.E. in Computer Science and Mathematics, GPA 3.93, expected May 2028. Coursework includes advanced algorithms, computer systems, operating systems, databases, big data analytics, and theory of computation.',
   awards: [
     'USACO Gold Division (top 1,000 competitors globally)',
+    'PennApps XXIV, Best Community Impact Hack',
+    'CalHacks 12.0, Snap Spectacles track, 2nd place',
+    'PwC Engineer Your Career Program',
     'Hong Kong Olympiad in Informatics, bronze medallist and training team (top 20 in Hong Kong)',
     'UK Mathematics Challenge, gold award, five times',
   ],

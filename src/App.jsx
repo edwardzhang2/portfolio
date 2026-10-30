@@ -15,6 +15,7 @@ const Nav = () => (
 
 const Hero = () => (
   <header className="hero" id="top">
+    <img className="hero-photo" src={site.photo} alt="" width="120" height="120" />
     <h1 className="hero-name">{site.name}</h1>
     <p className="hero-now">{site.now}</p>
     <ul className="hero-links">
@@ -42,6 +43,7 @@ const Role = ({ r }) => (
     </div>
     <div className="role-body">
       <h3 className="role-org">
+        {r.logo && <img className="role-logo" src={r.logo} alt="" />}
         {r.org}
         <span className="role-title"> {r.role}</span>
       </h3>
@@ -74,6 +76,7 @@ const Projects = () => (
     <ul className="projects">
       {projects.map((p) => (
         <li key={p.name} className="project">
+          {p.image && <img className="project-image" src={p.image} alt="" loading="lazy" />}
           <h3>
             {p.href ? (
               <a href={p.href} target="_blank" rel="noopener">{p.name}</a>
